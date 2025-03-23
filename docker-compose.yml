@@ -1,0 +1,13 @@
+services:
+  anidl:
+    build: .
+    container_name: anidl
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./videos:/usr/local/bin/aniDL/videos
+      - ./widevine:/usr/local/bin/aniDL/widevine
+      - ./playready:/usr/local/bin/aniDL/playready
+      - ./fonts:/usr/local/bin/aniDL/fonts
