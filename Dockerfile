@@ -29,21 +29,10 @@ RUN wget https://github.com/shaka-project/shaka-packager/releases/download/v3.4.
     chmod +x /usr/local/bin/shaka-packager
 
 # Install anidl
-RUN wget https://github.com/anidl/multi-downloader-nx/releases/download/v5.3.3/multi-downloader-nx-linux-cli.7z -O /tmp/multi-downloader-nx-linux-cli.7z && \
+RUN wget https://github.com/anidl/multi-downloader-nx/releases/download/v5.3.4/multi-downloader-nx-linux-cli.7z -O /tmp/multi-downloader-nx-linux-cli.7z && \
     7z x /tmp/multi-downloader-nx-linux-cli.7z -o/usr/local/bin && \
     chmod +x /usr/local/bin/multi-downloader-nx-linux-x64-cli/aniDL && \
     rm /tmp/multi-downloader-nx-linux-cli.7z
-
-ENV ANIDL_DIR=/usr/local/bin/multi-downloader-nx-linux-x64-cli
-ENV ANIDL_CONFIG_DIR=$ANIDL_DIR/config
-ENV ANIDL_BIN_PATH_YML=$ANIDL_CONFIG_DIR/bin-path.yml
-
-# Configure bin-path.yml
-RUN echo "ffmpeg: \"$(which ffmpeg)\"" > $ANIDL_BIN_PATH_YML && \
-    echo "mkvmerge: \"$(which mkvmerge)\"" >> $ANIDL_BIN_PATH_YML && \
-    echo "ffprobe: \"$(which ffprobe)\"" >> $ANIDL_BIN_PATH_YML && \
-    echo "mp4decrypt: \"$(which mp4decrypt)\"" >> $ANIDL_BIN_PATH_YML && \
-    echo "shaka: \"$(which shaka-packager)\"" >> $ANIDL_BIN_PATH_YML
 
 # Set entrypoint
 ENTRYPOINT ["/usr/local/bin/multi-downloader-nx-linux-x64-cli/aniDL"]

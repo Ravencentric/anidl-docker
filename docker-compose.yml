@@ -7,7 +7,22 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./videos:/usr/local/bin/aniDL/videos
-      - ./widevine:/usr/local/bin/aniDL/widevine
-      - ./playready:/usr/local/bin/aniDL/playready
-      - ./fonts:/usr/local/bin/aniDL/fonts
+      - type: bind
+        source: ./videos
+        target: /usr/local/bin/multi-downloader-nx-linux-x64-cli/videos
+
+      - type: bind
+        source: ./widevine
+        target: /usr/local/bin/multi-downloader-nx-linux-x64-cli/widevine
+
+      - type: bind
+        source: ./playready
+        target: /usr/local/bin/multi-downloader-nx-linux-x64-cli/playready
+
+      - type: bind
+        source: ./fonts
+        target: /usr/local/bin/multi-downloader-nx-linux-x64-cli/fonts
+
+      - type: bind
+        source: ./config
+        target: /usr/local/bin/multi-downloader-nx-linux-x64-cli/config
