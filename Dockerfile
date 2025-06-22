@@ -29,7 +29,7 @@ RUN wget https://github.com/shaka-project/shaka-packager/releases/download/v3.4.
     chmod +x /usr/local/bin/shaka-packager
 
 # Install anidl
-RUN wget https://github.com/anidl/multi-downloader-nx/releases/download/v5.4.5/multi-downloader-nx-linux-cli.7z -O /tmp/multi-downloader-nx-linux-cli.7z && \
+RUN wget https://github.com/anidl/multi-downloader-nx/releases/download/v5.4.8/multi-downloader-nx-linux-cli.7z -O /tmp/multi-downloader-nx-linux-cli.7z && \
     7z x /tmp/multi-downloader-nx-linux-cli.7z -o/usr/local/bin && \
     chmod +x /usr/local/bin/multi-downloader-nx-linux-x64-cli/aniDL && \
     rm /tmp/multi-downloader-nx-linux-cli.7z
