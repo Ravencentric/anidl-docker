@@ -24,9 +24,9 @@ RUN wget https://www.bok.net/Bento4/binaries/Bento4-SDK-1-6-0-641.x86_64-unknown
     mv /tmp/Bento4-SDK-1-6-0-641.x86_64-unknown-linux/bin/mp4decrypt /usr/local/bin/mp4decrypt && \
     rm -rf /tmp/Bento4-SDK-1-6-0-641.x86_64-unknown-linux.zip /tmp/Bento4-SDK-1-6-0-641.x86_64-unknown-linux
 
-# Install shaka-packager
-RUN wget https://github.com/shaka-project/shaka-packager/releases/download/v3.4.2/packager-linux-x64 -O /usr/local/bin/shaka-packager && \
-    chmod +x /usr/local/bin/shaka-packager
+# # Install shaka-packager
+# RUN wget https://github.com/shaka-project/shaka-packager/releases/download/v3.4.2/packager-linux-x64 -O /usr/local/bin/shaka-packager && \
+#     chmod +x /usr/local/bin/shaka-packager
 
 # Install anidl
 RUN wget https://github.com/anidl/multi-downloader-nx/releases/download/v5.7.0/multi-downloader-nx-linux-x64-cli.7z -O /tmp/multi-downloader-nx-linux-cli.7z && \
